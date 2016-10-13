@@ -28,7 +28,7 @@ target/
 .DS_Store
 Thumbs.db
 
-/src/main/webapp/WEB-INF/classes/com/core/exception/*.class
+# /src/main/webapp/WEB-INF/classes/com/core/exception/*.class
 *.class
 /src/main/webapp/WEB-INF/classes/conf/appContext-include.xml
 /src/main/webapp/WEB-INF/classes/conf/appContext-ioc.xml
@@ -36,3 +36,4 @@ Thumbs.db
 /src/main/webapp/WEB-INF/classes/conf/spring-dubbo.xml
 /src/main/webapp/WEB-INF/classes/conf/spring-mvc.xml
 /src/main/webapp/WEB-INF/classes/conf/spring-shiro.xml
+/src/main/webapp/WEB-INF/classes

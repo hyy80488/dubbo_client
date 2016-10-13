@@ -27,7 +27,7 @@ public class UserController extends PubController{
 	@RequestMapping(value = "/findUser",method = RequestMethod.GET)
 	public ModelAndView login(HttpServletRequest request,
 			HttpServletResponse response,CommForm commForm) throws Exception{
-		System.out.println("====client=================="+commForm.getUserName());
+		//System.out.println("====client=================="+commForm.getUserName());
 		Map<String,Object> model = new HashMap<String,Object>();
 		User u = userService.findUser(commForm.getUserName());
 		model.put("msg","Hello World !");
