@@ -15,21 +15,21 @@ import org.springframework.web.servlet.ModelAndView;
 import com.thd.bean.CommForm;
 import com.thd.bean.User;
 import com.thd.controller.PubController;
-import com.thd.service.UserService;
+import com.thd.service.UserServiceLocal;
 
 @Controller
 @RequestMapping(value = "/user")
 public class UserController extends PubController{
 	
 	@Resource
-	private UserService userService;
+	private UserServiceLocal userServiceLocal;
 	
 	@RequestMapping(value = "/findUser",method = RequestMethod.GET)
 	public ModelAndView login(HttpServletRequest request,
 			HttpServletResponse response,CommForm commForm) throws Exception{
-		//System.out.println("====client=================="+commForm.getUserName());
+		System.out.println("====client=================="+commForm.getUserName());
 		Map<String,Object> model = new HashMap<String,Object>();
-		User u = userService.findUser(commForm.getUserName());
+		User u = userServiceLocal.findUser(commForm.getUserName());
 		model.put("msg","Hello World !");
 		model.put("user", u);
 		return new ModelAndView("/user",model);

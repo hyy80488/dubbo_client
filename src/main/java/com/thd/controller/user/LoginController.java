@@ -24,14 +24,14 @@ import org.springframework.web.servlet.ModelAndView;
 import com.thd.bean.CommForm;
 import com.thd.bean.User;
 import com.thd.controller.PubController;
-import com.thd.service.UserService;
+import com.thd.service.UserServiceLocal;
 
 @Controller
 @RequestMapping(value = "/security")
 public class LoginController extends PubController {
 
 	@Resource
-	private UserService userService;
+	private UserServiceLocal userServiceLocal;
 	
 	@RequestMapping(value = "/dologin")
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, CommForm commForm) throws Exception {
@@ -53,7 +53,7 @@ public class LoginController extends PubController {
 			if (subject.isAuthenticated()) {
 				System.out.println("isAuthenticated!!!!!!");
 				
-				User u = userService.findUserByName(commForm.getUserName());
+				User u = userServiceLocal.findUserByName(commForm.getUserName());
 				model.put("user", u);
 				return new ModelAndView("/user",model);
 			} else {
